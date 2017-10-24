@@ -72,8 +72,8 @@ Once you click on "Save", a single Ajax request is sent to persist and flush cha
 #### Notes
 - By default, only users with the `ROLE_ADMIN` permission can edit inline text. To edit the allowed roles, you can edit your `config.yml`
  ```yml       
-        arkounay_block:
-            roles: ['IS_AUTHENTICATED_ANONYMOUSLY'] # Will allow anyone to edit inline!
+arkounay_block:
+    roles: ['IS_AUTHENTICATED_ANONYMOUSLY'] # Will allow anyone to edit inline!
  ```         
 - To edit TinyMCE, create your own `@ArkounayBlock/assets/include_js.html.twig`
 
@@ -83,9 +83,9 @@ Once you click on "Save", a single Ajax request is sent to persist and flush cha
 
 - By default, a div will be surrounding the editable text when connected. You can choose another tag with the third parameter, i.e for a span:
 ```twig
-        {{ render_block('block_id', true, 'span') }}
+ {{ render_block('block_id', true, 'span') }}
 ``` 
   you can also call this shortcut:
 ```twig   
-      {{ render_span_block('block_id') }}
+{{ render_span_block('block_id') }}
 ```
