@@ -38,10 +38,10 @@ php bin/console assets:install
             {% include '@ArkounayBlock/assets/include_js.html.twig' %}
         ```
 - In `routing.yml`, you will need to import the Ajax route:
-       ```yml 
-         block:
-             resource: "@ArkounayBlockBundle/Resources/config/routing.yml"
-        ```
+```yml 
+ block:
+     resource: "@ArkounayBlockBundle/Resources/config/routing.yml"
+```
 - Then update your database schema to add the provided PageBlock entity `php bin/console doctrine:schema:update --force`
         
 ## Usage
@@ -54,18 +54,18 @@ The first time you're going to edit it, a new PageBlock entity will be created i
     
 To edit an already existing entity text, you can add the following line: 
 ```twig
-    {{ render_entity_field(entity, 'field') }}
+{{ render_entity_field(entity, 'field') }}
 ```   
 For example, with a "News" entity, you could add this to make its content editable:
 ```twig    
-    {{ render_entity_field(news, 'content') }}
-    {# instead of {{ news.content }} #}
+{{ render_entity_field(news, 'content') }}
+{# instead of {{ news.content }} #}
 ```    
 Those who don't have editing permissions will see the field as if `{{ news.content }}` was directly called.
 
 There is also another version with less editing options, usually for shorter texts:
 ```twig
-    {{ render_plain_entity_field(entity, 'field') }}
+{{ render_plain_entity_field(entity, 'field') }}
 ```  
 Once you click on "Save", a single Ajax request is sent to persist and flush changed entities.
 
