@@ -24,18 +24,18 @@ php bin/console assets:install
     
     - CSS:
         ```twig
-            {% include '@ArkounayBlock/assets/include_css.html.twig' %}
+        {% include '@ArkounayBlock/assets/include_css.html.twig' %}
         ```
     - JS (**requires [jQuery](https://jquery.com/) and [TinyMCE](https://www.tinymce.com/)**):
         ```twig
-            {# Import jQuery and TinyMCE: #}
-            {% if has_inline_edit_permissions() %}
-                <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.4.3/tinymce.min.js"></script>
-            {% endif %}
-               
-            {# Then the default bundle's JavaScript: #}
-            {% include '@ArkounayBlock/assets/include_js.html.twig' %}
+        {# Import jQuery and TinyMCE: #}
+        {% if has_inline_edit_permissions() %}
+            <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.4.3/tinymce.min.js"></script>
+        {% endif %}
+
+        {# Then the default bundle's JavaScript: #}
+        {% include '@ArkounayBlock/assets/include_js.html.twig' %}
         ```
 - In `routing.yml`, you will need to import the Ajax route:
 ```yml 
